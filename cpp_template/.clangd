@@ -1,0 +1,16 @@
+CompileFlags:
+  Add: [-Wall, -Wextra]
+
+Index:
+  Background: Build
+
+Hover:
+  ShowAKA: true
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+
+Style:
+  FullyQualifiedNamespaces: false
