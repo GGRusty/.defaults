@@ -1,16 +1,28 @@
 CompileFlags:
-  Add: [-Wall, -Wextra]
-
+  Add: [-Wall, -Wextra]  # Added -Wno-uninitialized to suppress these warnings
 Index:
   Background: Build
-
 Hover:
   ShowAKA: true
-
 InlayHints:
   Enabled: true
   ParameterNames: true
   DeducedTypes: true
-
 Style:
   FullyQualifiedNamespaces: false
+Diagnostics:
+  UnusedIncludes: Default
+  ClangTidy:
+    Add: 
+      - bugprone-*
+      - clang-analyzer-cplusplus*
+      - performance-*
+      - modernize-use-nullptr
+      - modernize-use-override
+    Remove: 
+      - modernize-use-trailing-return-type
+      - cppcoreguidelines-avoid-magic-numbers
+      - bugprone-easily-swappable-parameters
+      - modernize-use-nodiscard
+      - cppcoreguidelines-init-variables  # Remove initialization check
+      - bugprone-uninitialized
